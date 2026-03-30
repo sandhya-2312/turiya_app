@@ -1,0 +1,99 @@
+/**
+ * TURIYA UI — color system derived from logo cyan-blue (#00A3FF).
+ * Use these tokens in CSS via var(--token) and in Tailwind as arbitrary values, e.g. text-[var(--color-brand-400)].
+ */
+:root {
+  /* Brand scale */
+  --color-brand-50: #e6f7ff;
+  --color-brand-100: #b3e8ff;
+  --color-brand-200: #80d9ff;
+  --color-brand-300: #4dc8ff;
+  --color-brand-400: #00a3ff;
+  --color-brand-500: #0088e6;
+  --color-brand-600: #006dcc;
+  --color-brand-700: #005599;
+  --color-brand-800: #003d73;
+  --color-brand-900: #001a33;
+
+  /* Neutrals — cool slate */
+  --color-ink: #0a1624;
+  --color-ink-soft: #0e314c;
+  --color-muted: #5a7189;
+  --color-muted-2: #6b7385;
+  --color-surface: #ffffff;
+  --color-surface-tint: #f0f9ff;
+
+  /* RGB helpers for rgba(..., alpha) */
+  --rgb-brand: 0, 163, 255;
+
+  /* Service card icon squares — distinct accent blocks (reference: lime, blue, amber, magenta, terracotta, cyan) */
+  --service-icon-1: #65a30d;
+  --service-icon-2: #2563eb;
+  --service-icon-3: #ca8a04;
+  --service-icon-4: #c026d3;
+  --service-icon-5: #ea580c;
+  --service-icon-6: #0891b2;
+
+  /* Gradients */
+  --gradient-cta: linear-gradient(90deg, var(--color-brand-300) 0%, var(--color-brand-400) 100%);
+  --gradient-cta-hover: linear-gradient(90deg, var(--color-brand-400) 0%, var(--color-brand-500) 100%);
+  --gradient-header-schedule: linear-gradient(90deg, var(--color-brand-400) 0%, var(--color-brand-200) 100%);
+  --gradient-about-band: linear-gradient(
+    125deg,
+    #005a8c 0%,
+    var(--color-brand-600) 32%,
+    var(--color-brand-500) 65%,
+    var(--color-brand-700) 100%
+  );
+  --gradient-accent-shape-a: linear-gradient(145deg, var(--color-brand-300) 0%, var(--color-brand-500) 100%);
+  --gradient-accent-shape-b: linear-gradient(145deg, var(--color-brand-100) 0%, var(--color-brand-400) 100%);
+  --gradient-industries-bg: linear-gradient(
+    to left bottom,
+    #fafdff,
+    #f4fbff,
+    #e8f6ff,
+    #d9f0ff,
+    #c8e8ff
+  );
+  --gradient-industry-hover: linear-gradient(135deg, var(--color-brand-600) 0%, var(--color-brand-400) 100%);
+  --gradient-free-trial-panel: linear-gradient(
+    100deg,
+    var(--color-brand-700) 0%,
+    var(--color-brand-500) 42%,
+    var(--color-brand-600) 100%
+  );
+
+  /* Shadows */
+  --shadow-brand: 0 12px 32px rgba(var(--rgb-brand), 0.38);
+  --shadow-brand-lg: 0 14px 36px rgba(var(--rgb-brand), 0.48);
+}
+
+/* Align legacy theme utility class with brand-tinted surface */
+.bg-f7fafd {
+  background-color: var(--color-surface-tint) !important;
+}
+
+/* Section title accent bar (theme default is green) */
+.section-title .bar {
+  background: var(--gradient-cta) !important;
+}
+
+/* Bootstrap primary — align with brand (loads after pasona-app.css) */
+.btn.btn-primary {
+  background: var(--gradient-cta) !important;
+  border-color: transparent !important;
+  color: #fff !important;
+  box-shadow: 0 8px 22px rgba(var(--rgb-brand), 0.28);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    filter 0.2s ease;
+}
+
+.btn.btn-primary:hover,
+.btn.btn-primary:focus {
+  background: var(--gradient-cta-hover) !important;
+  color: #fff !important;
+  filter: brightness(1.02);
+  box-shadow: 0 10px 26px rgba(var(--rgb-brand), 0.36);
+}

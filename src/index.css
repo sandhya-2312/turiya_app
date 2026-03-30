@@ -1,0 +1,7 @@
+@import 'tailwindcss';
+
+/* Design tokens (logo-based) — load before overrides */
+@import './styles/theme.css';
+
+/* Tailwind is included for utilities only; theme CSS supplies base + Bootstrap layout. */
+@import './styles/bigdata-overrides.css';

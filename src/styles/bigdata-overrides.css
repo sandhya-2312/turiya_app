@@ -1,0 +1,1516 @@
+/* Vue MainBanner — https://vue.envytheme.com/pasona/bigdata-analytics */
+.bigdata-analytics-banner {
+  position: relative;
+  overflow: hidden;
+}
+
+.bigdata-analytics-banner.ml-main-section.pasona-bigdata-photo {
+  background-image: url('/img/hero-bigdata.png');
+  /* Match reference: balanced framing; people / laptop toward center–right */
+  background-position: center 40%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  overflow: visible;
+  /* Height follows headline + container padding so the CTA→cards gap stays tight; cards stay bottom-anchored */
+  min-height: 0;
+}
+
+/* Reference look: even semi-transparent black (~50–60%) over the whole photo */
+.bigdata-analytics-banner.ml-main-section.pasona-bigdata-photo::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  /* Cool dark overlay aligned with brand blues */
+  background: linear-gradient(
+    90deg,
+    rgba(0, 18, 40, 0.62) 0%,
+    rgba(0, 35, 65, 0.5) 45%,
+    rgba(0, 25, 50, 0.55) 100%
+  );
+  z-index: 0;
+  pointer-events: none;
+}
+
+.bigdata-analytics-banner.ml-main-section.pasona-bigdata-photo > .container {
+  position: relative;
+  z-index: 1;
+  /* Clears the absolute card band — slightly shorter banner for better balance */
+  padding-bottom: clamp(6.25rem, 11vw, 8.75rem);
+}
+
+.bigdata-analytics-banner.ml-main-section.pasona-bigdata-photo > .banner-boxes-area {
+  z-index: 2;
+}
+
+.bigdata-analytics-content {
+  max-width: 640px;
+  padding: 28px 0 18px;
+}
+
+@media (min-width: 992px) {
+  .bigdata-analytics-content {
+    padding-top: 36px;
+    padding-bottom: 24px;
+  }
+}
+
+/* Photo hero: spacing under CTA (card band uses separate container padding) */
+.ml-main-section.pasona-bigdata-photo .bigdata-analytics-content {
+  padding-bottom: 1.25rem;
+}
+
+@media (min-width: 992px) {
+  .ml-main-section.pasona-bigdata-photo .bigdata-analytics-content {
+    padding-bottom: 1.5rem;
+  }
+}
+
+.bigdata-analytics-content h1 {
+  color: #fff;
+  font-size: clamp(2rem, 4.2vw, 2.75rem);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1.25rem;
+}
+
+.bigdata-analytics-content p {
+  color: rgba(255, 255, 255, 0.95);
+  font-size: 1.05rem;
+  line-height: 1.75;
+  margin-bottom: 1.75rem;
+}
+
+.ml-main-section.pasona-bigdata-photo .bigdata-analytics-content h1 {
+  margin-bottom: 1rem;
+}
+
+.ml-main-section.pasona-bigdata-photo .bigdata-analytics-content p {
+  margin-bottom: 1.4rem;
+}
+
+.bigdata-analytics-content .btn.btn-primary {
+  background: var(--gradient-cta);
+  border: none;
+  color: #fff !important;
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 14px 36px;
+  border-radius: 6px;
+  box-shadow: var(--shadow-brand);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.bigdata-analytics-content .btn.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-brand-lg);
+  color: #fff !important;
+}
+
+/* ML-style banner (no photo): keep headline readable on theme background */
+.ml-main-section.bigdata-analytics-banner:not(.pasona-bigdata-photo) .bigdata-analytics-content h1,
+.ml-main-section.bigdata-analytics-banner:not(.pasona-bigdata-photo) .bigdata-analytics-content p {
+  color: #fff;
+}
+
+.ml-main-section.bigdata-analytics-banner:not(.pasona-bigdata-photo) .bigdata-analytics-content p {
+  opacity: 0.95;
+}
+
+.banner-boxes-area {
+  padding-bottom: 72px;
+  margin-top: 4px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Photo hero: pin cards to the bottom of the banner (modern landing-page band) */
+.ml-main-section.pasona-bigdata-photo .banner-boxes-area.banner-boxes-area--photo {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin-top: 0 !important;
+  width: 100%;
+  padding-top: 0;
+  padding-bottom: clamp(1rem, 2.5vw, 1.5rem);
+}
+
+.single-banner-boxes {
+  background: #fff;
+  border-radius: 8px;
+  padding: 28px 24px 32px;
+  height: 100%;
+  margin-bottom: 24px;
+  box-shadow: 0 2px 48px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.single-banner-boxes:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.1);
+}
+
+.single-banner-boxes .icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: 2px solid var(--color-brand-400);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 18px;
+  color: var(--color-brand-400);
+}
+
+.single-banner-boxes .icon svg {
+  display: block;
+}
+
+.single-banner-boxes h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--color-ink-soft);
+  margin-bottom: 12px;
+}
+
+.single-banner-boxes p {
+  color: var(--color-muted);
+  font-size: 0.95rem;
+  line-height: 1.65;
+  margin: 0;
+}
+
+/* Photo hero: dark glass boxes + brand dashed frame */
+.ml-main-section.pasona-bigdata-photo .single-banner-boxes {
+  background: rgba(15, 23, 42, 0.48);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-width: 1px;
+  border-style: dashed;
+  border-color: rgba(var(--rgb-brand), 0.88);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.25);
+}
+
+.ml-main-section.pasona-bigdata-photo .single-banner-boxes:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.3);
+  border-color: var(--color-brand-400);
+}
+
+.ml-main-section.pasona-bigdata-photo .single-banner-boxes h3 {
+  color: #fff;
+}
+
+.ml-main-section.pasona-bigdata-photo .single-banner-boxes p {
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.ml-main-section.pasona-bigdata-photo .single-banner-boxes .icon {
+  border-width: 2px;
+}
+
+.ml-main-section.pasona-bigdata-photo .banner-box-icon--server {
+  border-color: var(--color-brand-400);
+  background: rgba(var(--rgb-brand), 0.2);
+  color: #fff;
+}
+
+.ml-main-section.pasona-bigdata-photo .banner-box-icon--code {
+  border-color: rgba(255, 255, 255, 0.55);
+  background: rgba(255, 255, 255, 0.12);
+  color: var(--color-brand-200);
+}
+
+.ml-main-section.pasona-bigdata-photo .banner-box-icon--users {
+  border-color: var(--color-brand-500);
+  background: rgba(var(--rgb-brand), 0.22);
+  color: #fff;
+}
+
+/* Photo hero: CSS Grid keeps all three cards top-aligned (avoids flex row stagger) */
+.ml-main-section.pasona-bigdata-photo .banner-boxes-area--photo .banner-feature-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.25rem;
+  align-items: start;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.ml-main-section.pasona-bigdata-photo .banner-boxes-area--photo .banner-feature-cards-grid > [class*='col-'] {
+  max-width: none;
+  width: auto;
+  flex: initial;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+@media (max-width: 991px) {
+  .ml-main-section.pasona-bigdata-photo .banner-boxes-area--photo .banner-feature-cards-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 575px) {
+  .ml-main-section.pasona-bigdata-photo .banner-boxes-area--photo .banner-feature-cards-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Highest-specificity home for photo cards (must beat theme + Tailwind). */
+.ml-main-section.pasona-bigdata-photo .banner-boxes-area--photo .single-banner-boxes {
+  padding: 15px 16px 16px;
+  height: auto;
+  margin-bottom: 20px;
+  border-radius: 6px;
+  border: 1px dashed rgba(var(--rgb-brand), 0.92) !important;
+}
+
+.ml-main-section.pasona-bigdata-photo .banner-boxes-area--photo .single-banner-boxes:hover {
+  border-color: var(--color-brand-400) !important;
+}
+
+.ml-main-section.pasona-bigdata-photo .banner-boxes-area--photo .single-banner-boxes .icon {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 10px;
+}
+
+.ml-main-section.pasona-bigdata-photo .banner-boxes-area--photo .single-banner-boxes h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 6px;
+  line-height: 1.3;
+}
+
+.ml-main-section.pasona-bigdata-photo .banner-boxes-area--photo .single-banner-boxes p {
+  font-size: 0.8125rem;
+  line-height: 1.5;
+}
+
+/* —— Vue HeaderFive: headroom + navbar-color-white —— */
+#header.headroom.navbar-color-white {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  transition: background 0.35s ease, box-shadow 0.35s ease;
+}
+
+#header.headroom.navbar-color-white:not(.is-sticky) {
+  background: transparent;
+  box-shadow: none;
+}
+
+#header.headroom.navbar-color-white.is-sticky {
+  background: #fff;
+  box-shadow: 0 2px 24px rgba(14, 49, 76, 0.1);
+}
+
+#header.headroom.navbar-color-white:not(.is-sticky) .navbar-light .navbar-nav .nav-item > a.nav-link {
+  color: rgba(255, 255, 255, 0.95) !important;
+}
+
+#header.headroom.navbar-color-white.is-sticky .navbar-light .navbar-nav .nav-item > a.nav-link {
+  color: var(--color-ink-soft) !important;
+}
+
+#header.headroom.navbar-color-white:not(.is-sticky) .navbar-light .navbar-nav .nav-item > a.nav-link .feather {
+  stroke: rgba(255, 255, 255, 0.95);
+}
+
+#header.headroom.navbar-color-white.is-sticky .navbar-light .navbar-nav .nav-item > a.nav-link .feather {
+  stroke: var(--color-ink-soft);
+}
+
+#header.headroom.navbar-color-white:not(.is-sticky) .header-five-others .cart-wrapper-btn {
+  color: #fff !important;
+}
+
+#header.headroom.navbar-color-white.is-sticky .header-five-others .cart-wrapper-btn {
+  color: var(--color-ink-soft) !important;
+}
+
+.header-five-nav .header-five-logo {
+  max-height: 40px;
+  width: auto;
+}
+
+.header-five-toggler {
+  width: 44px;
+  height: 40px;
+  padding: 8px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#header.headroom.navbar-color-white:not(.is-sticky) .header-five-toggler .icon-bar {
+  background: #fff;
+}
+
+#header.headroom.navbar-color-white.is-sticky .header-five-toggler .icon-bar {
+  background: var(--color-ink-soft);
+}
+
+.header-five-toggler .icon-bar {
+  display: block;
+  width: 22px;
+  height: 2px;
+  margin: 5px auto;
+  border-radius: 1px;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.header-five-toggler.active .top-bar {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.header-five-toggler.active .middle-bar {
+  opacity: 0;
+}
+
+.header-five-toggler.active .bottom-bar {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+.header-five-schedule.btn-primary {
+  background: var(--gradient-header-schedule) !important;
+  border: none !important;
+  color: #fff !important;
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 12px 22px;
+  border-radius: 6px;
+  box-shadow: 0 12px 28px rgba(var(--rgb-brand), 0.45);
+}
+
+.header-five-schedule.btn-primary:hover {
+  filter: brightness(0.95);
+  color: #fff !important;
+}
+
+.header-five-nav.navbar {
+  padding: 14px 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .header-five-nav .navbar-collapse {
+    flex: 1 1 auto;
+    justify-content: flex-end;
+  }
+
+  .header-five-others {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-shrink: 0;
+    margin-left: 0.75rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .header-five-others {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-left: auto;
+    order: 2;
+  }
+
+  .header-five-toggler {
+    order: 3;
+  }
+
+  .header-five-nav .navbar-collapse {
+    order: 4;
+    width: 100%;
+    margin-top: 10px;
+  }
+}
+
+/* Dark hero: light nav until sticky (matches reference over photo hero) */
+#header.headroom:not(.is-sticky).over-dark-hero .startp-nav nav .navbar-nav .nav-item > a.nav-link {
+  color: rgba(255, 255, 255, 0.95) !important;
+}
+
+#header.headroom:not(.is-sticky).over-dark-hero .startp-nav nav .navbar-nav .nav-item > a.nav-link .feather {
+  stroke: rgba(255, 255, 255, 0.95);
+}
+
+#header.headroom:not(.is-sticky).over-dark-hero .startp-nav .others-option .cart-wrapper-btn {
+  color: #fff;
+}
+
+#header.headroom:not(.is-sticky).over-dark-hero .startp-nav .navbar-toggler {
+  border-color: rgba(255, 255, 255, 0.6);
+}
+
+#header.headroom:not(.is-sticky).over-dark-hero .pasona-nav-toggler .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255,0.95)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+#header.headroom:not(.is-sticky).over-dark-hero .btn-schedule-demo {
+  color: #fff !important;
+  box-shadow: 0 13px 27px 0 rgba(var(--rgb-brand), 0.45);
+}
+
+/* What We Do: link lists */
+.what-we-do-links {
+  list-style: none;
+  padding: 0;
+  margin: 12px 0 0;
+}
+.what-we-do-links li {
+  margin-bottom: 6px;
+}
+.what-we-do-links a {
+  color: var(--color-brand-400);
+  font-weight: 500;
+}
+.what-we-do-links a:hover {
+  text-decoration: underline;
+}
+
+/* Soft cool gradient (brand-tinted) */
+.industries-section-pasona {
+  background: var(--gradient-industries-bg);
+}
+
+.industries-grid .industry-item {
+  display: block;
+  padding: 18px 16px;
+  text-align: center;
+  font-weight: 600;
+  color: var(--color-ink-soft);
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 48px 0 rgba(0, 0, 0, 0.08);
+  transition: 0.5s;
+}
+.industries-grid .industry-item:hover {
+  transform: translateY(-6px);
+  color: #fff;
+  background: var(--gradient-industry-hover);
+}
+
+.single-services-box .icon .bx {
+  font-size: 28px;
+  line-height: 55px;
+  display: block;
+}
+
+/* Pasona Big Data — services grid (parallelogram cards, reference demo) */
+.ml-services-area .single-ml-services-box.pasona-services-card {
+  text-align: left;
+  padding: 0;
+  margin-bottom: 30px;
+  background: transparent !important;
+  border-radius: 0;
+  overflow: visible;
+  filter: drop-shadow(0 6px 26px rgba(15, 49, 76, 0.08));
+  transition:
+    transform 0.35s ease,
+    filter 0.35s ease;
+}
+
+.ml-services-area .single-ml-services-box.pasona-services-card:hover {
+  transform: translateY(-8px);
+  filter: drop-shadow(0 14px 38px rgba(15, 49, 76, 0.14));
+}
+
+/* Theme’s square hover corner doesn’t match slanted card */
+.ml-services-area .single-ml-services-box.pasona-services-card::before {
+  display: none !important;
+}
+
+/* White fill: vertical sides; top & bottom edges slope upward (left → right). Content stays axis-aligned. */
+.pasona-services-card__surface {
+  position: relative;
+  background: #fff;
+  -webkit-clip-path: polygon(0 6%, 100% 0, 100% 94%, 0 100%);
+  clip-path: polygon(0 6%, 100% 0, 100% 94%, 0 100%);
+  padding: 40px 34px 36px;
+  overflow: hidden;
+}
+
+.ml-services-area .pasona-services-card__surface .image {
+  margin-bottom: 22px;
+  text-align: left;
+}
+
+.pasona-services-card__pattern {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 148px;
+  height: 148px;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.85;
+}
+
+.pasona-services-card__icon {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 10px;
+  color: #fff;
+  box-shadow: 0 2px 10px rgba(15, 49, 76, 0.12);
+}
+
+/* Thin white outline icons inside the colored square (reference card model) */
+.pasona-services-card__icon svg {
+  flex-shrink: 0;
+  stroke: currentColor;
+  color: #fff;
+}
+
+.pasona-services-card__icon--1 {
+  background: var(--service-icon-1);
+}
+.pasona-services-card__icon--2 {
+  background: var(--service-icon-2);
+}
+.pasona-services-card__icon--3 {
+  background: var(--service-icon-3);
+}
+.pasona-services-card__icon--4 {
+  background: var(--service-icon-4);
+}
+.pasona-services-card__icon--5 {
+  background: var(--service-icon-5);
+}
+.pasona-services-card__icon--6 {
+  background: var(--service-icon-6);
+}
+
+.ml-services-area .pasona-services-card__surface h3 {
+  position: relative;
+  z-index: 1;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--color-ink-soft);
+  margin-bottom: 12px;
+  line-height: 1.35;
+}
+
+.ml-services-area .pasona-services-card__surface p {
+  position: relative;
+  z-index: 1;
+  color: var(--color-muted-2);
+  font-size: 15px;
+  line-height: 1.75;
+  margin-bottom: 0;
+}
+
+.single-ml-services-box .learn-more-btn {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 6px;
+  margin-top: 16px;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--color-brand-400);
+  text-decoration: none;
+  transition: color 0.25s ease;
+}
+
+.single-ml-services-box .learn-more-btn:hover {
+  color: var(--color-brand-500);
+}
+
+.single-ml-services-box .learn-more-btn svg {
+  flex-shrink: 0;
+}
+
+/* —— Services listing page (/services): rectangular cards, light gradient band —— */
+.services-page {
+  background: var(--gradient-industries-bg);
+}
+
+.services-page .single-ml-services-box.pasona-services-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  margin-bottom: 28px;
+  background: transparent !important;
+  filter: none;
+  text-align: left;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.services-page .pasona-services-card__surface {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 100%;
+  clip-path: none;
+  -webkit-clip-path: none;
+  /* Rounded rectangle — softer than sharp box, still reads as a clear “tile” */
+  border-radius: 16px;
+  padding: 36px 32px 32px;
+  box-shadow: 0 4px 28px rgba(15, 49, 76, 0.09);
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  background: #fff;
+  overflow: hidden;
+  text-align: left;
+}
+
+.services-page .pasona-services-card__surface h3,
+.services-page .pasona-services-card__surface p {
+  text-align: left;
+}
+
+.services-page .single-ml-services-box.pasona-services-card:hover {
+  transform: translateY(-6px);
+}
+
+.services-page .single-ml-services-box.pasona-services-card:hover .pasona-services-card__surface {
+  box-shadow: 0 14px 38px rgba(15, 49, 76, 0.12);
+}
+
+.services-page .pasona-services-card__pattern {
+  opacity: 0.72;
+}
+
+.services-page .pasona-services-card__surface .image {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.services-page .pasona-services-card__surface h3 {
+  position: relative;
+  z-index: 1;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--color-ink);
+  letter-spacing: -0.02em;
+  margin-bottom: 12px;
+  line-height: 1.35;
+}
+
+.services-page .pasona-services-card__surface p {
+  position: relative;
+  z-index: 1;
+  color: var(--color-muted-2);
+  font-size: 15px;
+  line-height: 1.75;
+  margin-bottom: 0;
+}
+
+.services-page .services-page__actions {
+  position: relative;
+  z-index: 1;
+  margin-top: auto;
+  padding-top: 1.25rem;
+  justify-content: flex-start;
+  text-align: left;
+}
+
+.services-page .single-ml-services-box .learn-more-btn {
+  margin-top: 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-brand-400);
+}
+
+.services-page .single-ml-services-box .learn-more-btn:hover {
+  color: var(--color-brand-500);
+}
+
+/* Services CTA banner (listing + detail) — soft gradient, white primary button */
+.services-cta-banner {
+  background: linear-gradient(
+    125deg,
+    rgba(230, 247, 255, 0.92) 0%,
+    #ffffff 42%,
+    #f8fafc 100%
+  );
+}
+
+@media (min-width: 768px) {
+  .services-cta-banner__inner {
+    min-height: 5.5rem;
+  }
+}
+
+/* Swiper: match owl carousel height for partner logos */
+.partner-slides.swiper {
+  padding-bottom: 8px;
+}
+.partner-slides .swiper-slide {
+  height: auto;
+}
+.partner-slides .swiper-wrapper {
+  align-items: center;
+}
+
+/* About image: match template intrinsic layout */
+.ml-about-img img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+}
+
+/* ML banner illustration column */
+.ml-banner-image {
+  min-height: 320px;
+}
+
+/* —— Big Data demo navbar (Envytheme reference: logo | centered links | cart + Schedule a Demo) —— */
+.pasona-navbar-replica .startp-nav nav .navbar-nav .nav-item > a.nav-link {
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.pasona-navbar-replica .btn-schedule-demo {
+  background-color: var(--color-brand-500);
+  color: #fff !important;
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 12px 26px;
+  border-radius: 4px;
+  border: none;
+  line-height: 1.2;
+  white-space: nowrap;
+  box-shadow: 0 13px 27px 0 rgba(var(--rgb-brand), 0.35);
+  transition: background-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.pasona-navbar-replica .btn-schedule-demo:hover,
+.pasona-navbar-replica .btn-schedule-demo:focus {
+  background-color: var(--color-brand-600);
+  color: #fff !important;
+  box-shadow: 0 10px 22px 0 rgba(var(--rgb-brand), 0.4);
+}
+
+#header.headroom.is-sticky .pasona-navbar-replica .btn-schedule-demo {
+  box-shadow: 0 10px 24px 0 rgba(var(--rgb-brand), 0.28);
+}
+
+.pasona-navbar-replica .pasona-nav-actions {
+  margin-left: 0;
+  gap: 18px;
+}
+
+.pasona-navbar-replica .pasona-nav-actions .cart-wrapper-btn {
+  margin-right: 0;
+}
+
+@media (min-width: 768px) {
+  .pasona-navbar-replica .navbar {
+    flex-wrap: nowrap;
+  }
+
+  .pasona-navbar-replica .pasona-nav-collapse {
+    flex-grow: 1;
+    min-width: 0;
+  }
+
+  .pasona-navbar-replica .pasona-nav-inner {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .pasona-navbar-replica .pasona-nav-links {
+    flex: 1 1 auto;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    max-width: min(720px, 100%);
+  }
+
+  .pasona-navbar-replica .pasona-nav-links > .nav-item {
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+}
+
+@media (max-width: 767px) {
+  .pasona-navbar-replica .startp-nav nav .others-option.pasona-nav-actions {
+    display: flex !important;
+    margin-left: 0 !important;
+    margin-top: 8px;
+    padding-bottom: 8px;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .pasona-navbar-replica .startp-nav nav .navbar-nav {
+    margin-left: 0 !important;
+  }
+}
+
+/* —— Pasona Big Data Analytics: About (teal band + layered photos + orange accents) —— */
+.about-section-pasona {
+  padding-top: clamp(1.75rem, 4vw, 2.5rem);
+  padding-bottom: clamp(1.75rem, 4vw, 2.5rem);
+  background: var(--gradient-about-band);
+}
+
+.about-section-pasona__decor {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  opacity: 0.22;
+  background-image:
+    radial-gradient(circle at 12% 25%, rgba(255, 255, 255, 0.35) 0%, transparent 42%),
+    radial-gradient(circle at 88% 18%, rgba(255, 255, 255, 0.12) 0%, transparent 35%),
+    repeating-linear-gradient(
+      135deg,
+      transparent,
+      transparent 8px,
+      rgba(255, 255, 255, 0.04) 8px,
+      rgba(255, 255, 255, 0.04) 9px
+    );
+  mask-image: linear-gradient(180deg, #000 0%, #000 85%, transparent 100%);
+}
+
+.about-section-pasona__decor::after {
+  content: '';
+  position: absolute;
+  left: 6%;
+  top: 14%;
+  width: 88px;
+  height: 88px;
+  border: 2px dashed rgba(255, 255, 255, 0.35);
+  border-radius: 50%;
+  opacity: 0.45;
+}
+
+.about-section-pasona__visual {
+  position: relative;
+  min-height: min(220px, 40vw);
+  padding: 1rem 0 1.5rem 0.5rem;
+}
+
+@media (min-width: 992px) {
+  .about-section-pasona__visual {
+    min-height: 260px;
+    padding: 0.5rem 1rem 1.25rem 0;
+  }
+}
+
+.about-section-pasona__accent {
+  position: absolute;
+  border-radius: 4px;
+  z-index: 0;
+}
+
+.about-section-pasona__accent--a {
+  width: min(44%, 180px);
+  height: min(28%, 110px);
+  min-height: 72px;
+  bottom: 8%;
+  left: 0;
+  background: var(--gradient-accent-shape-a);
+  box-shadow: 0 10px 22px rgba(var(--rgb-brand), 0.28);
+}
+
+.about-section-pasona__accent--b {
+  width: min(38%, 160px);
+  height: min(22%, 96px);
+  min-height: 72px;
+  top: 6%;
+  right: 4%;
+  background: var(--gradient-accent-shape-b);
+  opacity: 0.95;
+}
+
+.about-section-pasona__photo-wrap {
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+.about-section-pasona__photo-wrap img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.about-section-pasona__photo-wrap--1 {
+  position: relative;
+  z-index: 2;
+  width: 82%;
+  max-width: 300px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.2);
+}
+
+.about-section-pasona__photo-wrap--2 {
+  position: absolute;
+  z-index: 3;
+  right: 0;
+  bottom: 0;
+  width: 58%;
+  max-width: 220px;
+  box-shadow: 0 20px 44px rgba(0, 0, 0, 0.24);
+}
+
+/* Discover More — match hero Get Started (gradient + hover) */
+.about-section-pasona .about-section-pasona__cta.btn.btn-primary {
+  background: var(--gradient-cta);
+  border: none;
+  color: #fff !important;
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 12px 28px;
+  border-radius: 6px;
+  box-shadow: var(--shadow-brand);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.about-section-pasona .about-section-pasona__cta.btn.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-brand-lg);
+  color: #fff !important;
+}
+
+@media (max-width: 991px) {
+  .about-section-pasona__content {
+    text-align: center;
+  }
+
+  .about-section-pasona__cta {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .about-section-pasona__visual {
+    margin-top: 1.25rem;
+    max-width: 380px;
+  }
+}
+
+/* Team grid — real gap between cards (Swiper was stretching slides; narrow cards sat in empty space) */
+.team-area .team-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 230px));
+  gap: 16px;
+  justify-content: center;
+  width: 100%;
+}
+
+@media (max-width: 1199px) {
+  .team-area .team-grid {
+    grid-template-columns: repeat(2, minmax(0, 230px));
+  }
+}
+
+@media (max-width: 575px) {
+  .team-area .team-grid {
+    grid-template-columns: minmax(0, 230px);
+  }
+}
+
+.team-area .team-grid .single-team {
+  max-width: none;
+  width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+/* Team cards — compact width/height + circular avatars */
+.team-area .single-team {
+  max-width: 230px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 24px;
+  padding-bottom: 24px;
+}
+
+.team-area .single-team .team-image {
+  padding-left: 18px;
+  padding-right: 18px;
+}
+
+.team-area .single-team .team-content {
+  padding-left: 18px;
+  padding-right: 18px;
+}
+
+.team-area .single-team .team-image img {
+  display: block;
+  width: 108px !important;
+  height: 108px !important;
+  max-width: 108px !important;
+  object-fit: cover;
+  border-width: 2px;
+  opacity: 1;
+  visibility: visible;
+}
+
+.team-area .single-team .team-info {
+  padding: 8px 12px;
+  margin-top: 16px;
+  margin-bottom: 14px;
+  margin-left: 4px;
+  margin-right: 4px;
+  border-radius: 999px;
+}
+
+.team-area .single-team .team-info h3 {
+  font-size: 15px;
+  margin-bottom: 2px;
+  line-height: 1.25;
+}
+
+.team-area .single-team .team-info span {
+  font-size: 12px;
+  line-height: 1.3;
+}
+
+.team-area .single-team .team-content ul li {
+  margin: 0 3px;
+}
+
+.team-area .single-team .team-content ul li a svg {
+  width: 16px !important;
+}
+
+.team-area .single-team .team-content p {
+  margin-top: 12px;
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+/* —— Free trial: split banner (photo + diagonal + green→teal gradient) —— */
+.free-trial-area.free-trial-split {
+  position: relative;
+  padding: 0 !important;
+  overflow: hidden;
+  background: transparent;
+}
+
+.free-trial-split__inner {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: stretch;
+  min-height: min(440px, 56vw);
+  max-width: 100%;
+}
+
+.free-trial-split__photo {
+  position: relative;
+  flex: 0 0 40%;
+  max-width: 44%;
+  min-height: 280px;
+  overflow: hidden;
+  /* Diagonal right edge: top-right → lower on the left at bottom */
+  clip-path: polygon(0 0, 100% 0, 86% 100%, 0 100%);
+}
+
+.free-trial-split__photo img {
+  width: 100%;
+  height: 100%;
+  min-height: 320px;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.free-trial-split__panel {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-self: stretch;
+  margin-left: -6%;
+  padding: clamp(2.75rem, 5vw, 4rem) clamp(2rem, 5vw, 4rem) clamp(2.75rem, 5vw, 4rem)
+    clamp(2.75rem, 8vw, 5.5rem);
+  background: var(--gradient-free-trial-panel);
+  color: #fff;
+}
+
+/* Centered block: heading + form + subcopy, left-aligned within the block */
+.free-trial-split__body {
+  width: 100%;
+  max-width: 520px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  text-align: left;
+}
+
+.free-trial-split__panel h2 {
+  margin: 0 0 1.25rem;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.25;
+}
+
+.free-trial-split__form {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  width: 100%;
+  gap: 0;
+  margin-bottom: 1.125rem;
+}
+
+.free-trial-split__form input[type='email'] {
+  flex: 1 1 auto;
+  min-width: 180px;
+  padding: 0.9rem 1.25rem;
+  border: none;
+  border-radius: 999px 0 0 999px;
+  background: #2d2d2d;
+  color: #fff;
+  font-size: 15px;
+  outline: none;
+}
+
+.free-trial-split__form input[type='email']::placeholder {
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.free-trial-split__form button {
+  flex: 0 0 auto;
+  padding: 0.9rem 1.75rem;
+  border: none;
+  border-radius: 0 999px 999px 0;
+  background: #fff;
+  color: var(--color-ink-soft);
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  box-shadow: 0 4px 14px rgba(14, 49, 76, 0.12);
+  transition:
+    transform 0.22s ease,
+    box-shadow 0.25s ease,
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.free-trial-split__form button:hover {
+  background: #fff;
+  transform: translateY(-2px);
+  animation: free-trial-btn-breathe 2s ease-in-out infinite;
+}
+
+.free-trial-split__form button:active {
+  transform: translateY(0);
+  animation: none;
+  box-shadow: 0 2px 10px rgba(14, 49, 76, 0.14);
+  transition-duration: 0.08s;
+}
+
+.free-trial-split__form button:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 3px;
+}
+
+@keyframes free-trial-btn-breathe {
+  0%,
+  100% {
+    box-shadow:
+      0 8px 22px rgba(14, 49, 76, 0.18),
+      0 0 0 0 rgba(255, 255, 255, 0.35);
+  }
+  50% {
+    box-shadow:
+      0 12px 32px rgba(14, 49, 76, 0.26),
+      0 0 0 6px rgba(255, 255, 255, 0.12);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .free-trial-split__form button {
+    transition: background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .free-trial-split__form button:hover {
+    animation: none;
+    transform: none;
+    box-shadow: 0 8px 22px rgba(14, 49, 76, 0.2);
+  }
+}
+
+.free-trial-split__note {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.95);
+}
+
+@media (max-width: 991px) {
+  .free-trial-split__inner {
+    flex-direction: column;
+    min-height: 0;
+  }
+
+  .free-trial-split__photo {
+    flex: none;
+    max-width: 100%;
+    width: 100%;
+    min-height: 220px;
+    clip-path: none;
+  }
+
+  .free-trial-split__photo img {
+    min-height: 240px;
+  }
+
+  .free-trial-split__panel {
+    margin-left: 0;
+    padding: 2.5rem 1.5rem 2.75rem;
+    align-items: center;
+  }
+
+  .free-trial-split__body {
+    max-width: none;
+  }
+
+  .free-trial-split__form {
+    flex-direction: column;
+  }
+
+  .free-trial-split__form input[type='email'] {
+    border-radius: 999px;
+  }
+
+  .free-trial-split__form button {
+    border-radius: 999px;
+    width: 100%;
+    padding-top: 0.95rem;
+    padding-bottom: 0.95rem;
+  }
+}
+
+/* Footer: Feather SVGs in theme social circles — flex center, spacing, crisp rings */
+.footer-area .footer-social-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+  margin-bottom: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+.footer-area .footer-social-links li {
+  display: block;
+  margin-right: 0 !important;
+}
+
+.footer-area .footer-social-links li a {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  width: 40px !important;
+  height: 40px !important;
+  min-width: 40px;
+  min-height: 40px;
+  padding: 0 !important;
+  line-height: 1 !important;
+  border-radius: 50%;
+  border-width: 2px !important;
+  border-style: solid;
+  box-sizing: border-box;
+  text-decoration: none;
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.2s ease;
+}
+
+.footer-area .footer-social-links li a svg {
+  width: 18px !important;
+  height: 18px !important;
+  flex-shrink: 0;
+  display: block;
+}
+
+.footer-area .footer-social-links li a:hover {
+  transform: translateY(-2px);
+}
+
+.footer-area .footer-social-links li a:focus-visible {
+  outline: 2px solid var(--color-brand-400);
+  outline-offset: 3px;
+}
+
+.footer-area .footer-social-links li a.facebook {
+  border-color: #4267b2 !important;
+  color: #4267b2 !important;
+}
+
+.footer-area .footer-social-links li a.facebook:hover {
+  background: #4267b2 !important;
+  color: #fff !important;
+  border-color: #4267b2 !important;
+}
+
+.footer-area .footer-social-links li a.twitter {
+  border-color: #38a1f3 !important;
+  color: #38a1f3 !important;
+}
+
+.footer-area .footer-social-links li a.twitter:hover {
+  background: #38a1f3 !important;
+  color: #fff !important;
+  border-color: #38a1f3 !important;
+}
+
+.footer-area .footer-social-links li a.instagram {
+  border-color: #231f20 !important;
+  color: #231f20 !important;
+}
+
+.footer-area .footer-social-links li a.instagram:hover {
+  background: #231f20 !important;
+  color: #fff !important;
+  border-color: #231f20 !important;
+}
+
+.footer-area .footer-social-links li a.linkedin {
+  border-color: #0077b5 !important;
+  color: #0077b5 !important;
+}
+
+.footer-area .footer-social-links li a.linkedin:hover {
+  background: #0077b5 !important;
+  color: #fff !important;
+  border-color: #0077b5 !important;
+}
+
+/* —— Navbar: hover dropdowns — invisible bridge (padding) prevents flicker —— */
+.nav-dropdown-flyout {
+  position: absolute;
+  left: 0;
+  top: 100%;
+  z-index: 60;
+  /* Padding = hover hit-area between trigger and panel (no dead zone) */
+  padding-top: 0.5rem;
+  min-width: 15.5rem;
+  width: max-content;
+}
+
+.nav-dropdown-panel {
+  position: relative;
+  min-width: 15.5rem;
+  padding: 0.4rem 0;
+  border-radius: 0.75rem;
+  border: 1px solid rgba(148, 163, 184, 0.25);
+  background: rgba(255, 255, 255, 0.97);
+  box-shadow:
+    0 4px 6px -1px rgba(15, 49, 76, 0.06),
+    0 20px 40px -12px rgba(0, 60, 100, 0.18);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  animation: nav-dropdown-in 0.24s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@keyframes nav-dropdown-in {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.nav-dropdown-link {
+  display: block;
+  padding: 0.65rem 1.1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  color: var(--color-ink-soft);
+  text-decoration: none;
+  transition:
+    background-color 0.15s ease,
+    color 0.15s ease;
+}
+
+.nav-dropdown-link:hover,
+.nav-dropdown-link:focus-visible {
+  outline: none;
+  background: var(--color-brand-50);
+  color: var(--color-brand-600);
+}
+
+.nav-dropdown-link:focus-visible {
+  box-shadow: inset 0 0 0 2px rgba(var(--rgb-brand), 0.35);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nav-dropdown-panel {
+    animation: none;
+  }
+}
+
+/* Contact (anchor) — theme CSS can override Tailwind on <a>; match dropdown hover */
+.nav-cluster-links > a.nav-top-link-contact {
+  text-decoration: none !important;
+}
+
+nav[data-navbar-theme='light'] .nav-cluster-links > a.nav-top-link-contact:hover,
+nav[data-navbar-theme='light'] .nav-cluster-links > a.nav-top-link-contact:focus-visible {
+  background-color: var(--color-brand-50) !important;
+  color: var(--color-brand-600) !important;
+}
+
+nav[data-navbar-theme='dark'] .nav-cluster-links > a.nav-top-link-contact:hover,
+nav[data-navbar-theme='dark'] .nav-cluster-links > a.nav-top-link-contact:focus-visible {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+  color: var(--color-brand-200) !important;
+}
+
+nav[data-navbar-theme='light'] .nav-cluster-links > a.nav-top-link-contact:focus-visible {
+  outline: 2px solid rgba(var(--rgb-brand), 0.45);
+  outline-offset: 2px;
+}
+
+nav[data-navbar-theme='dark'] .nav-cluster-links > a.nav-top-link-contact:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.45);
+  outline-offset: 2px;
+}
+
+/* —— Footer: address layout (light theme default from theme CSS) —— */
+.footer-area .footer-address-block {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.35rem;
+  line-height: 1.6;
+}
+
+.footer-area .logo img {
+  max-height: 52px;
+  width: auto;
+}
+
